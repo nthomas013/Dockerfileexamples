@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  busyboxcompose:
+    image: busybox:unstable-uclibc
+    container_name: busyboxcontainer
+    restart: "no"
+    command: [ "sh", "-c", "while true; do echo BusyBox running; sleep 60; done" ]
+    volumes:
+      - busyboxvolume:/data
+    tty: true
+    stdin_open: true
+
+volumes:
+  busyboxvolume:
+

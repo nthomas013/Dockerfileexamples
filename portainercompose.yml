@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  portainercompose:
+    image: portainer/portainer-ce:alpine
+    container_name: portainercontainer
+    restart: unless-stopped
+    ports:
+      - "4500:9000"  # Portainer web UI (HTTP)
+      - "4501:9443"  # Portainer web UI (HTTPS)
+    volumes:
+      - portvolume:/data  # stores Portainer config and database
+
+volumes:
+  portvolume:
+

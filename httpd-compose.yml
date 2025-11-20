@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  httpdcomposefile:
+    image: httpd:latest
+    container_name: myhttpdcontainer
+    ports: 
+      - "1111:80"
+    volumes: 
+      - httpdvolume2:/data   
+volumes:
+  httpdvolume2: 

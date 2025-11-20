@@ -1,0 +1,5 @@
+FROM ubuntu:22.04
+RUN apt update -y && apt install apache2 -y
+COPY templatemo_578_first_portfolio /var/www/html
+EXPOSE 80
+CMD ["apache2ctl", "-D", "FOREGROUND"]

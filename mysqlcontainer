@@ -1,0 +1,7 @@
+FROM mysql:8.0.44-debian
+ENV MYSQL_ROOT_PASSWORD=asd123.
+ENV MYSQL_DATABASE=mydb
+ENV MYSQL_USER=mydbuser
+ENV MYSQL_PASSWORD=myfirstuser
+EXPOSE 3306
+CMD ["mysqld"]

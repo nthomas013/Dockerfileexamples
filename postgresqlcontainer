@@ -1,0 +1,6 @@
+FROM postgres:14.19-trixie
+ENV POSTGRES_DB=myfirstdb
+ENV POSTGRES_USER=dbuser
+ENV POSTGRES_PASSWORD=asd123.
+EXPOSE 5432
+CMD ["postgres"]

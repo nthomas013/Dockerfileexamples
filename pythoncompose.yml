@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  pythoncompose:
+    image: python:trixie
+    container_name: pythoncontainer
+    working_dir: /app
+    tty: true
+    stdin_open: true
+    restart: no
+    volumes:
+      - .:/app
+    command: ["tail", "-f", "/dev/null"]
+

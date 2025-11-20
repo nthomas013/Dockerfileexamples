@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  almahttpdcompose:
+    build: /home/nevin/Dockerfileexamples/almalinux_httpd
+    container_name: almahttpdcontainer
+    ports:
+      - "8083:80"
+    volumes:
+      - httpdvolume4:/data
+volumes:
+  httpdvolume4: 

@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  nginxcompose:
+    image: nginx:latest
+    container_name: nginxcontainer
+    ports:
+      - "1130:80"
+    volumes:
+      - nginxvolume9:/data
+    networks:
+      - myfirstnetwork
+volumes:
+  nginxvolume9:
+networks:
+  myfirstnetwork:
+    driver: bridge  

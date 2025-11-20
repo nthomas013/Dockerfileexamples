@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  ubuntuhttpdcompose:
+    build: /home/nevin/Dockerfileexamples/ubuntu_httpd
+    container_name: httpdnginxcontainer
+    ports:
+      - "8081:80"
+    volumes:
+      - httpdvolume3:/data
+volumes:
+  httpdvolume3:  
+

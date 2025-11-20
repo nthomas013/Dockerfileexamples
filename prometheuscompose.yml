@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  prometheuscompose:
+    image: geokrety/prometheus:latest
+    container_name: prometheuscontainer
+    restart: unless-stopped
+    ports:
+      - "4000:9090"  # Prometheus web UI
+    volumes:
+      - prometheusvolume:/prometheus
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--web.console.libraries=/usr/share/prometheus/console_libraries"
+      - "--web.console.templates=/usr/share/prometheus/consoles"
+
+volumes:
+  prometheusvolume:
+

@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  mongodbcompose:
+    image: mongodb/mongodb-community-server:8.2-ubi8
+    container_name: mongodbcontainer
+    restart: always
+    environment:
+      MONGODB_INITDB_ROOT_USERNAME: ${MONGODB_INITDB_ROOT_USERNAME}
+      MONGODB_INITDB_ROOT_PASSWORD: ${MONGODB_INITDB_ROOT_PASSWORD}
+    ports:
+      - "1110:27017"
+    volumes:
+      - mongodbvolume:/data/db
+      - mongodbconfigvolume:/data/configdb
+volumes:
+  mongodbvolume:
+  mongodbconfigvolume:
+

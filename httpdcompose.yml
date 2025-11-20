@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  httpdcompose:
+    image: httpd:alpine
+    container_name: myhttpdcontainer
+    ports: 
+      - "1020:80"
+    volumes: 
+      - httpdvolume1:/data
+    networks:
+      - myfirstnetwork    
+volumes:
+  httpdvolume1: 
+networks:
+  myfirstnetwork:
+    driver: bridge  

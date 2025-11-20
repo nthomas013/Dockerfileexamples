@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  drupalcompose:
+    image: drupal:10.5.5-php8.4-fpm-alpine3.21
+    container_name: drupalcontainer
+    restart: unless-stopped
+    environment:
+      DRUPAL_DB_HOST: localhost
+      DRUPAL_DB_USER: druuser
+      DRUPAL_DB_PASSWORD: rootpassword
+      DRUPAL_DB_NAME: drudb
+    volumes:
+      - drupalvolume2:/var/www/html
+    expose:
+      - "1509:9000"  
+
+volumes:
+  drupalvolume2:
+

@@ -1,0 +1,6 @@
+FROM traefik:v3.1
+COPY ./traefik.yml /etc/traefik/traefik.yml
+EXPOSE 80 
+EXPOSE 443
+EXPOSE 8080
+CMD ["traefik"]

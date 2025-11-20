@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  wordpresscompose:
+    image: wordpress:beta-php8.4-fpm-alpine
+    container_name: wpcontainer
+    restart: unless-stopped
+    environment:
+      WORDPRESS_DB_HOST: localhost
+      WORDPRESS_DB_USER: wpuser
+      WORDPRESS_DB_PASSWORD: wpuserpassword
+      WORDPRESS_DB_NAME: wpdb
+    volumes:
+      - wpvolume:/var/www/html
+    expose:
+      - "11099000"  # PHP-FPM port (for internal use)
+
+volumes:
+  wpvolume:
+

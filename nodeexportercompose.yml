@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  node_exportercompose:
+    image: prom/node-exporter:master
+    container_name: node_exportercontainer
+    restart: unless-stopped
+    network_mode: host   # exposes metrics directly on the host network
+    pid: host
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.sysfs=/host/sys'
+      - '--path.rootfs=/rootfs'
+      - '--collector.filesystem.ignored-mount-points=^/(sys|proc|dev|host|etc)($$|/)'
+

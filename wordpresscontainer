@@ -1,0 +1,11 @@
+FROM wordpress:beta-php8.4-fpm-alpine
+RUN apk update && apk add --no-cache \
+      libpng-dev \
+      libjpeg-turbo-dev \
+      libwebp-dev \
+      libzip-dev \
+      && docker-php-ext-configure gd --with-jpeg --with-webp \
+      && docker-php-ext-install mysqli gd zip
+RUN chown -R www-data:www-data /var/www/html
+EXPOSE 9000
+CMD ["php-fpm"]

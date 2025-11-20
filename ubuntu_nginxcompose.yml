@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  ubuntunginxcompose:
+    build: /home/nevin/Dockerfileexamples/ubuntu_nginx
+    container_name: ubuntunginxcontainer
+    ports:
+      - "8080:80"
+    volumes:
+      - nginxvolume10:/data
+volumes:
+  nginxvolume10:  
+

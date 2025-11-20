@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  mariadbcompose:
+    image: mariadb:12.1.1-ubi10-rc
+    container_name: mariadbcontainer
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+      MARIADB_DATABASE: ${MARIADB_DATABASE}
+      MARIADB_USER: ${MARIADB_USER}
+      MARIADB_PASSWORD: ${MARIADB_PASSWORD}
+    ports:
+      - "2000:3306"
+    volumes:
+      - mariadbvolume2:/var/lib/mariadb
+
+volumes:
+  mariadbvolume2:
+

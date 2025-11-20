@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  jenkinscompose:
+    image: jenkins/jenkins:lts-jdk21
+    container_name: jenkinscontainer
+    restart: unless-stopped
+    user: root
+    ports:
+      - "1700:8080"   # Jenkins web UI
+      - "1800:50000" # Agent connections
+    volumes:
+      - jenkinsvolume1:/var/jenkins_home
+      - jenkinssockvolume:/var/run/docker.sock  
+    environment:
+      - JENKINS_OPTS=--httpPort=8080
+volumes:
+  jenkinsvolume1:
+  jenkinssockvolume:  
+

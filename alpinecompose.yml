@@ -1,0 +1,6 @@
+version: '3.8'
+services:
+  alpinecompose:
+    image: alpine:latest
+    container_name: myalpinecomposecontainer
+    command: sleep infinity  

@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  nginx-proxy-manager-compose:
+    image: jc21/nginx-proxy-manager:latest
+    container_name: nginxproxycontainer
+    restart: unless-stopped
+    ports:
+      - "1090:80"      # HTTP
+      - "1091:81"      # Admin web UI
+      - "1092:443"    # HTTPS
+    volumes:
+      - npmvolume:/data
+      - npmletsencrypt:/etc/letsencrypt
+
+volumes:
+  npmvolume:
+  npmletsencrypt:
+

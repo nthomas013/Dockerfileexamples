@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  mysqlcompose:
+    image: mysql:8.0.44-debian
+    container_name: mysqlcontainer
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: asd123.
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - "1500:3306"
+    volumes:
+      - mysqlvolume2:/var/lib/mysql
+
+volumes:
+  mysqlvolume2:
+

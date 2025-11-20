@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  alpinehttpdcompose:
+    build: /home/nevin/Dockerfileexamples/alpine_httpd
+    container_name: alpinehttpdcontainer
+    ports:
+      - "1400:80"
+    volumes:
+      - httpdvolume5:/data
+volumes:
+  httpdvolume5: 

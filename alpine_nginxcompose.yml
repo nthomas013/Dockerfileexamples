@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  alpinenginxcompose:
+    build: /home/nevin/Dockerfileexamples/alpine_nginx
+    container_name: alpinenginxcontainer
+    ports:
+      - "8084:80"
+    volumes:
+      - nginxvolume12:/data
+volumes:
+  nginxvolume12: 
+

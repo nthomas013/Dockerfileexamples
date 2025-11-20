@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  almanginxcompose:
+    build: /home/nevin/Dockerfileexamples/almalinux_nginx
+    container_name: almanginxcontainer
+    ports:
+      - "8082:80"
+    volumes:
+      - nginxvolume11:/data
+volumes:
+  nginxvolume11: 

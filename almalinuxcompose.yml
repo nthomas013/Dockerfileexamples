@@ -1,0 +1,6 @@
+version: '3.8'
+services:
+  almalinuxcompose:
+    image: almalinux:minimal
+    container_name: myalmacontainer
+    command: sleep infinity   

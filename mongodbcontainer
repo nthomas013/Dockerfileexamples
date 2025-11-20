@@ -1,0 +1,5 @@
+FROM mongodb/mongodb-community-server:8.2-ubi8
+ENV MONGO_INITDB_ROOT_USERNAME=myuser
+ENV MONGO_INITDB_ROOT_PASSWORD=asd123.
+EXPOSE 27017
+CMD ["mongod", "--bind_ip_all"]

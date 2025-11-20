@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  ansiblecompose:
+    image: ansible/ansible:ubuntu1404
+    volumes:
+      - ./ansible:/etc/ansible 
+      - ~/.ssh:/root/.ssh:ro 
+    command: ["tail", "-f", "/dev/null"] 
+  
+  # Example managed node service
+  web_server:
+    image: ubuntu:14.04
